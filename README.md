@@ -1,4 +1,4 @@
-#Cardio
+#Cardi
 
 Parse web page meta data into an object containing title, description, keywords, and images.
 
@@ -6,24 +6,24 @@ Parse web page meta data into an object containing title, description, keywords,
 
 Global
 ```
-npm install cardio -g
+npm install cardi -g
 ```
 
 Local
 ```
-npm install cardio
+npm install cardi
 ```
 
 ##Usage
 
 ```JavaScript
-var cardio = require('cardio');
+var cardi = require('cardi');
 
-cardio.fromUrl('https://github.com', function (card) {
+cardi.fromUrl('https://github.com', function (card) {
   console.log(card);
 });
 
-cardio.fromHtml('<html><head><title>The title</title></head><body></body></html>', function (card) {
+cardi.fromHtml('<html><head><title>The title</title></head><body></body></html>', function (card) {
   console.log(card);
 });
 ```

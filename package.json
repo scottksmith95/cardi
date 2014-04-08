@@ -1,9 +1,9 @@
 {
-  "name": "cardio",
+  "name": "cardi",
   "description": "Parse web page meta data into an object containing title, description, keywords, and images.",
   "version": "0.1.0",
   "author": "Scott Smith",
-  "homepage": "https://github.com/scottksmith95/cardio",
+  "homepage": "https://github.com/scottksmith95/cardi",
   "keywords": [
     "meta",
     "card",
@@ -13,10 +13,10 @@
     "request": "~2.34.0",
     "cheerio": "~0.14.0"
   },
-  "main": "./cardio.js",
+  "main": "./cardi.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scottksmith95/cardio.git"
+    "url": "https://github.com/scottksmith95/cardi.git"
   },
   "engine": "node"
 }
