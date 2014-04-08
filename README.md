@@ -25,7 +25,7 @@ cardio.fromUrl('https://github.com', function (card) {
 
 cardio.fromHtml('<html><head><title>The title</title></head><body></body></html>', function (card) {
   console.log(card);
-});)
+});
 ```
 
 ##Example Card
