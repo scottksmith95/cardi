@@ -19,11 +19,11 @@ npm install cardi
 ```JavaScript
 var cardi = require('cardi');
 
-cardi.fromUrl('https://github.com', function (card) {
+cardi.fromUrl('https://github.com', function (err, card) {
   console.log(card);
 });
 
-cardi.fromHtml('<html><head><title>The title</title></head><body></body></html>', function (card) {
+cardi.fromHtml('<html><head><title>The title</title></head><body></body></html>', function (err, card) {
   console.log(card);
 });
 ```

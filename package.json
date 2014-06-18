@@ -1,7 +1,7 @@
 {
   "name": "cardi",
   "description": "Parse web page meta data into an object containing title, description, keywords, and images.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Scott Smith",
   "homepage": "https://github.com/scottksmith95/cardi",
   "keywords": [
@@ -10,8 +10,8 @@
     "opengraph"
   ],
   "dependencies": {
-    "request": "~2.34.0",
-    "cheerio": "~0.14.0"
+    "request": "^2.34.0",
+    "cheerio": "^0.14.0"
   },
   "main": "./cardi.js",
   "repository": {

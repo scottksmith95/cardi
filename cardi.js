@@ -6,12 +6,12 @@ exports.fromUrl = function(url, callback) {
 }
 
 exports.fromHtml = function(data, callback) {
-    callback(parseHtml(data));
+    callback(null, parseHtml(data));
 };
 
 var parseUrl = function(url, callback) {
     request.get(url, function(err, resp, body) {
-        callback(parseHtml(body));
+        callback(err, parseHtml(body));
     });
 }
 
