@@ -35,6 +35,8 @@ var parseHtml = function(data) {
     //Sanity
     if (!card.title) { card.title = ''; }
     if (!card.description) { card.description = ''; }
+    if (!card.openGraphDescription) { card.openGraphDescription = ''; }
+    if (!card.twitterDescription) { card.twitterDescription = ''; }
     if (!card.keywords) { card.keywords = []; }
     if (!card.image) { card.image = ''; }
     if (!card.images) { card.images = []; }
@@ -56,9 +58,12 @@ var parseMetas = function(metaTags) {
             if ((!card.title || card.title.length < metaContent.length) && 
                 (metaProperty === 'og:title' || metaName === 'twitter:title')) {
                 card.title = metaContent;
-            } else if ((!card.description || card.description.length < metaContent.length) && 
-                (metaProperty === 'og:description' || metaName === 'twitter:description' || metaName === 'description')) {
+            } else if (!card.description && metaName === 'description') {
                 card.description = metaContent;
+            } else if (!card.openGraphDescription && metaProperty === 'og:description') {
+                card.openGraphDescription = metaContent;
+            } else if (!card.twitterDescription && metaName === 'twitter:description') {
+                card.twitterDescription = metaContent;
             } else if ((!card.image || card.image.length < metaContent.length) && 
                 (metaProperty === 'og:image:secure_url' || metaProperty === 'og:image')) {
                 var temp = metaContent.toLowerCase();

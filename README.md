@@ -34,6 +34,8 @@ cardi.fromHtml('<html><head><title>The title</title></head><body></body></html>'
 {
   title: 'Build software better, together',
   description: 'GitHub is the best place to build software together. Over 4 million people use GitHub to share code.',
+  openGraphDescription: 'GitHub is the best place to build software together. Over 4 million people use GitHub to share code.',
+  twitterDescription: 'GitHub is the best place to build software together. Over 4 million people use GitHub to share code.',
   keywords: [
     'coders',
     'developers'
