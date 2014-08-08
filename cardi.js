@@ -16,21 +16,27 @@ var parseUrl = function(url, callback) {
 }
 
 var parseHtml = function(data) {
-    $ = cheerio.load(data);
+    var card = {};
 
-    var metaTags = $('meta');
-    var imageTags = $('img');
+    try {
+        $ = cheerio.load(data);
 
-    //Get initial card from meta tags
-    var card = parseMetas(metaTags);
+        var metaTags = $('meta');
+        var imageTags = $('img');
 
-    //If title isn't set now, grab it from the <title> tag
-    if (!card.title || card.title.length <= 0) {
-        card.title = $('title').text();
+        //Get initial card from meta tags
+        card = parseMetas(metaTags);
+
+        //If title isn't set now, grab it from the <title> tag
+        if (!card.title || card.title.length <= 0) {
+            card.title = $('title').text();
+        }
+
+        //Get images
+        card.images = parseImages(imageTags);
+    } catch (exception) {
+        //Do nothing
     }
-
-    //Get images
-    card.images = parseImages(imageTags);
 
     //Sanity
     if (!card.title) { card.title = ''; }
