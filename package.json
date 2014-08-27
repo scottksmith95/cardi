@@ -1,6 +1,6 @@
 {
   "name": "cardi",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Parse web page meta data into an object containing title, description, keywords, and images.",
   "main": "./cardi.js",
   "author": "Scott Smith",
@@ -13,7 +13,8 @@
   ],
   "dependencies": {
     "request": "^2.40.0",
-    "cheerio": "^0.17.0"
+    "cheerio": "^0.17.0",
+    "tough-cookie": "^0.12.1"
   },
   "repository": {
     "type": "git",

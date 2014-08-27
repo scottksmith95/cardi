@@ -1,5 +1,6 @@
 var request = require('request');
 var cheerio = require('cheerio');
+var tough = require('tough-cookie');
 
 exports.fromUrl = function(url, callback) {
     parseUrl(url, callback);
@@ -10,7 +11,20 @@ exports.fromHtml = function(data, callback) {
 };
 
 var parseUrl = function(url, callback) {
-    request.get(url, function(err, resp, body) {
+    var useragent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36';
+    var jar = request.jar();
+
+    var options = {
+        method: 'GET',
+        url: url,
+        followAllRedirects: true,
+        headers: { 
+            'User-Agent': useragent
+        },
+        jar: jar
+    };
+
+    request(options, function (err, resp, body) {
         callback(err, parseHtml(body));
     });
 }
