@@ -4,7 +4,7 @@ var tough = require('tough-cookie');
 
 exports.fromUrl = function(url, callback) {
     parseUrl(url, callback);
-}
+};
 
 exports.fromHtml = function(data, callback) {
     callback(null, parseHtml(data));
@@ -18,6 +18,7 @@ var parseUrl = function(url, callback) {
         method: 'GET',
         url: url,
         followAllRedirects: true,
+        rejectUnauthorized: false,
         headers: { 
             'User-Agent': useragent
         },
@@ -27,7 +28,7 @@ var parseUrl = function(url, callback) {
     request(options, function (err, resp, body) {
         callback(err, parseHtml(body));
     });
-}
+};
 
 var parseHtml = function(data) {
     var card = {};
@@ -66,7 +67,7 @@ var parseHtml = function(data) {
 
 var parseMetas = function(metaTags) {
     var card = { };
-    var keys = Object.keys(metaTags)
+    var keys = Object.keys(metaTags);
 
     //Iterate throuhg all meta tags
     keys.forEach(function(key){

@@ -1,6 +1,6 @@
 {
   "name": "cardi",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Parse web page meta data into an object containing title, description, keywords, and images.",
   "main": "./cardi.js",
   "author": "Scott Smith",
